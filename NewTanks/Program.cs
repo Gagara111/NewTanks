@@ -1,7 +1,11 @@
+using NewTanks.Game;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IProfile> (x => new Profile());
+
 
 var app = builder.Build();
 

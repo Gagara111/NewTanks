@@ -1,9 +1,15 @@
 using NewTanks.Game;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services
+    .AddControllersWithViews()
+    .AddRazorOptions(x =>
+    {
+        x.PageViewLocationFormats.Add("/PartialViews/{0}.cshtml");
+    });
 builder.Services.AddSingleton<IProfile> (x => new Profile());
 
 

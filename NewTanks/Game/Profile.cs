@@ -10,10 +10,10 @@ public class Profile : IProfile
 
 public bool ValidateProfile(string login, string password)
 {
-    if (_profiles.Keys.Contains(login)) return false;
-    if (_profiles[login] == password) return false;
+    if (!_profiles.TryGetValue(login, out var Profile)) return false;
+   
 
-    return true;
+    return _profiles[login] == password;
 }
 }
 

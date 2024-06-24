@@ -31,6 +31,20 @@
           <input class="form-styling" type="text" name="username" placeholder=""/>
           <label for="password">пароль</label>
           <input class="form-styling" type="text" name="password" placeholder=""/>
+          <div class="btn-animate" // дописан
+          <script type="module"></script> // дописан
+          function SignInSent(){
+              $(".form-signin").trigger("submit")
+          }
+              $(".btn-signin").on("click",SignInSent)
+              $(".form-signin input[name=`password`]").on("keydown", function (event) {
+
+                  console.log(event)
+                  if (event.key === "Enter"){
+                      SignInSent()
+                  }
+              })
+
           <input type="checkbox" id="checkbox"/>
           <label for="checkbox" ><span class="ui"></span>остаться в аккаунте</label>
           <div class="btn-animate">

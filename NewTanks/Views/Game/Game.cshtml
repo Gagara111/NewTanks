@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewData["Title"] = "Game";
+
+}
+
+<div class="text-center"> // для создания поля используются частичные виды
+    @await Html.PartialAsync("GamePartialView")
+
+</div>

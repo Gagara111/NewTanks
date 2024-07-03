@@ -6,7 +6,11 @@
 <h1>GameField</h1>
 <div class="GameFild">
     @{
-        for (int counter = 0; counter < Model.FieldHeight; counter++)
+        for (int row = 0; row < Model.FieldHeight; row++)
+        {
+            Html.Raw(@"<div class=")
+            FormatValue(int column = 0; column < Model.FieldHeight;column++)
+        }
         {
            await Html.RenderPartialAsync("GameFieldRow");
         }
